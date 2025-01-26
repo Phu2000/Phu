@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-25T15:28:29.995669" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Pin" source="C:\Users\User\Desktop\pos_mobile_tests\testcases\openapp\test_pin.robot">
+<test id="s1-t1" name="Open POS Mobile App" line="7">
+<kw name="Open Pos Mobile App" owner="common">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=${CAPABILITIES['platformName']}</arg>
+<arg>platformVersion=${CAPABILITIES['platformVersion']}</arg>
+<arg>deviceName=${CAPABILITIES['deviceName']}</arg>
+<arg>appPackage=${CAPABILITIES['appPackage']}</arg>
+<arg>appActivity=${CAPABILITIES['appActivity']}</arg>
+<arg>noReset=${CAPABILITIES['noReset']}</arg>
+<arg>fullContext=${CAPABILITIES['fullContext']}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-12-25T15:28:30.120721" elapsed="16.242267"/>
+</kw>
+<status status="PASS" start="2024-12-25T15:28:30.120127" elapsed="16.243058"/>
+</kw>
+<kw name="Input Pin" owner="openapp_keywords">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-12-25T15:28:46.364538" level="INFO">Length is 6.</msg>
+<msg time="2024-12-25T15:28:46.364662" level="INFO">${pin_length} = 6</msg>
+<var>${pin_length}</var>
+<arg>${pin}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-12-25T15:28:46.364310" elapsed="0.000385"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${pin_length} == 6</arg>
+<arg>"PIN must be 6 digits"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-12-25T15:28:46.364857" elapsed="0.000413"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-12-25T15:28:46.365745" level="INFO">${digits} = [1, 1, 1, 1, 1, 1]</msg>
+<var>${digits}</var>
+<arg>[int(d) for d in str(${pin})]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-12-25T15:28:46.365418" elapsed="0.000359"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-25T15:28:46.366084" level="INFO">[1, 1, 1, 1, 1, 1]</msg>
+<arg>${digits}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-25T15:28:46.365915" elapsed="0.000225"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:46.368550" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="1"]'.</msg>
+<msg time="2024-12-25T15:28:48.044771" level="INFO">xpath criteria: //android.widget.Button[@content-desc="1"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="${digit}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:46.366544" elapsed="1.678353"/>
+</kw>
+<var name="${digit}">1</var>
+<status status="PASS" start="2024-12-25T15:28:46.366435" elapsed="1.678531"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:48.045943" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="1"]'.</msg>
+<msg time="2024-12-25T15:28:49.222962" level="INFO">xpath criteria: //android.widget.Button[@content-desc="1"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="${digit}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:48.045288" elapsed="1.177780"/>
+</kw>
+<var name="${digit}">1</var>
+<status status="PASS" start="2024-12-25T15:28:48.045154" elapsed="1.177988"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:49.223943" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="1"]'.</msg>
+<msg time="2024-12-25T15:28:49.975436" level="INFO">xpath criteria: //android.widget.Button[@content-desc="1"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="${digit}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:49.223378" elapsed="0.752148"/>
+</kw>
+<var name="${digit}">1</var>
+<status status="PASS" start="2024-12-25T15:28:49.223304" elapsed="0.752284"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:49.977099" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="1"]'.</msg>
+<msg time="2024-12-25T15:28:50.244664" level="INFO">xpath criteria: //android.widget.Button[@content-desc="1"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="${digit}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:49.975856" elapsed="0.268895"/>
+</kw>
+<var name="${digit}">1</var>
+<status status="PASS" start="2024-12-25T15:28:49.975737" elapsed="0.269075"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:50.246311" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="1"]'.</msg>
+<msg time="2024-12-25T15:28:51.483759" level="INFO">xpath criteria: //android.widget.Button[@content-desc="1"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="${digit}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:50.245090" elapsed="1.238719"/>
+</kw>
+<var name="${digit}">1</var>
+<status status="PASS" start="2024-12-25T15:28:50.244966" elapsed="1.238876"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:51.484801" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="1"]'.</msg>
+<msg time="2024-12-25T15:28:52.214351" level="INFO">xpath criteria: //android.widget.Button[@content-desc="1"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="${digit}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:51.483986" elapsed="0.730468"/>
+</kw>
+<var name="${digit}">1</var>
+<status status="PASS" start="2024-12-25T15:28:51.483920" elapsed="0.730608"/>
+</iter>
+<var>${digit}</var>
+<value>@{digits}</value>
+<status status="PASS" start="2024-12-25T15:28:46.366232" elapsed="5.848347"/>
+</for>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:53.394078" level="INFO">xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]
+xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="ยืนยัน"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-25T15:28:52.214799" elapsed="1.179400"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:53.395921" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="ยืนยัน"]'.</msg>
+<msg time="2024-12-25T15:28:54.102635" level="INFO">xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="ยืนยัน"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:53.394433" elapsed="0.708332"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:55.582221" level="INFO">xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]
+xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]
+xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="ยืนยัน"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-25T15:28:54.102948" elapsed="1.479369"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-25T15:28:55.584292" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="ยืนยัน"]'.</msg>
+<msg time="2024-12-25T15:28:55.787086" level="INFO">xpath criteria: //android.widget.Button[@content-desc="ยืนยัน"]</msg>
+<arg>xpath=//android.widget.Button[@content-desc="ยืนยัน"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-25T15:28:55.582762" elapsed="0.204435"/>
+</kw>
+<arg>111111</arg>
+<status status="PASS" start="2024-12-25T15:28:46.363820" elapsed="9.423548"/>
+</kw>
+<kw name="Close App" owner="common">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-12-25T15:28:55.788274" elapsed="0.817678"/>
+</kw>
+<status status="PASS" start="2024-12-25T15:28:55.787885" elapsed="0.818162"/>
+</kw>
+<tag>Open POS Mobile App</tag>
+<status status="PASS" start="2024-12-25T15:28:30.119328" elapsed="26.487215"/>
+</test>
+<status status="PASS" start="2024-12-25T15:28:29.996638" elapsed="26.611060"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Open POS Mobile App</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Pin">Test Pin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

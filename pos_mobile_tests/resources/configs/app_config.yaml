@@ -1,0 +1,39 @@
+CAPABILITIES:
+  platformName: Android
+  # platformVersion:  "11"
+  platformVersion:  "9"
+  # deviceName: R58T21APQLW
+  deviceName: emulator-5554
+  appPackage: th.co.gosoft.posonline
+  appActivity:  th.co.gosoft.posonline.MainActivity
+  automationName: UiAutomator2
+  noReset:  true
+  fullContext:  true
+  newCommandTimeout:  60
+
+PIN:
+  pin:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+
+PHONENUMBER:
+  number:
+    - 0
+    - 8
+    - 3
+    - 8
+    - 2
+    - 3
+    - 9
+    - 9
+    - 1
+    - 1
+
+EXCEL:
+  excel_file: C:\Users\User\Desktop\pos_mobile_tests\resources\data\products_data.xlsx
+  sheet_name: Sheet1
+  column_name:  barcode
